@@ -4,7 +4,7 @@ function displayMessage() {
 
     Swal.fire({
         backdrop: false,
-        title: 'APP Name',
+        title: 'Counting Cruise',
         text: msg
     })
 }
