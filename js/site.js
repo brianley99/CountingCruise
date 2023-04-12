@@ -8,8 +8,21 @@ function getValues() {
     let startNumber = parseInt(startValue);
     let endNumber = parseInt(endValue);
 
-    let numberArray = generateNumbers(startNumber, endNumber);
-    displayNumbers(numberArray);
+    if (Number.isInteger(startNumber) && Number.isInteger(endNumber)) {
+        // Valid numbers
+        let numberArray = generateNumbers(startNumber, endNumber);
+        displayNumbers(numberArray);
+    } else {
+        // Display an error
+        Swal.fire({
+            icon:'error',
+            title: 'Ooops!',
+            text: 'Please enter valid Numbers for the start and and values',
+            backdrop: 'false'
+        });
+    }
+
+
 
 }
 
