@@ -81,4 +81,9 @@ footer {
 .appLogo {
     max-width: 400px;
 }
+
+.evenNumber {
+    font-weight: bolder;
+}
+
 /* ----- END MAIN ----- */

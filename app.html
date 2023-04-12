@@ -75,9 +75,54 @@
     </header>
 
     <main class="container my-3">
-        <h1>App UI Goes Here</h1>
-        <input id="message" type="text" placeholder="Enter a Message">
-        <button id="btnSubmit" class="btn btn-primary">Display Message</button>
+        <div class="row">
+            <div class="col">
+                <h1>Counting Cruise: Coding Challange</h1>
+                <h4 class="lead">Counting Cruise is a dynamic web page programmed with JavaScript that generates a table
+                    of numbers within a specified
+                    range of 0 to 100, with even numbers highlighted in <strong>bold</strong> font.</h4>
+                <hr>
+                <h2>Instructions</h2>
+                <p>
+                    Enter a starting and an ending number within 0 to 100.<br>
+                    Click "Count" to generate the table.<br>
+                    Even numbers will be highlighted in bold font.
+                </p>
+            </div>
+            <div class="col">
+                <form action="#">
+                    <h5>Enter Values</h5>
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label for="startValue" class="form-label">Starting Number</label>
+                            <input id="startValue" type="number" name="startValue" placeholder="Starting Number"
+                                aria-label="Starting Number" value="0" class="form-control" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="endValue" class="form-label">Ending Number</label>
+                            <input id="endValue" type="number" name="endValue" placeholder="Ending Number"
+                                aria-label="Ending Number" value="100" class="form-control" />
+                        </div>
+                        <div class="col-12 text-end">
+                            <button id="btnSubmit" type="button" class="btn btn-primary">
+                                Count
+                            </button>
+                        </div>
+                        <hr>
+
+                        <!-- Results Go here -->
+                        <h2 class="mt-3">Results</h2>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <tbody id="results">
+                                    <!-- JavaScript results go here-->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </main>
 
     <!-- TODO: UPDATE TO SAME AS PORTFOLIO -->
@@ -110,7 +155,7 @@
     <!-- App JS-->
     <script src="/js/site.js"></script>
     <script>
-        document.getElementById('btnSubmit').addEventListener('click', displayMessage);
+        document.getElementById('btnSubmit').addEventListener('click', getValues);
     </script>
 
 </body>
