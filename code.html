@@ -137,9 +137,46 @@ function displayNumbers(numbers) {
                 </pre>
             </div>
             <div class="col-12 col-lg-4">
-                <p>The code is structured in one function</p>
-                <h5>Display Message</h5>
-                <p>Prints out the message</p>
+                <p>site.js is a JavaScript file for "Counting Cruise" wich will generate a table of numbers within a specified range of 0
+                to 100, with even numbers highlighted in bold font.
+                
+                Separation of concens allows us to be able to better understand and address any future bugs or changes.
+                
+                The Code separated into 3 major functions
+                Controller Function - getValues() is the function responsible to get the start and end numbers from the input as well as
+                call any other function needed.
+                Logic Function - generateNumbers() will need a starting and ending number to generate and return an array of numbers.
+                View Function - displayNumbers() will take an array of numbers, formating and inserting each number into a table in
+                index.html.
+                
+                Now what happens when each function gets called?
+                
+                getValues()
+                - Will retrive a 'startValue' and 'endValue' from the document, formating them as a number and assigning them to
+                'startNumber' and 'endNumber'.
+                - Will call generateNumbers() with 'startNumber' and 'endNumbers' as its input to generate an array of numbers called
+                'numberArray'.
+                - Will call displayNumbers() with 'numberArray' as its input.
+                
+                generateNumbers()
+                - Will take two numbers ('start', 'end') to generate an array of numbers called 'basketOfNUmbers' from specified range
+                using a for loop.
+                - A for loop is made of four components a starting value, a condition, a change in the starting value, and code to
+                execute. In this case the code will start at 'start', increase the 'start' value by 1 each loop until the starting value
+                is greater than or equal to the ending value 'end'.
+                - Return 'basketOfNumbers'
+                
+                displayNumbers()
+                - will take an array of numbers called 'numbers'.
+                - Use a for loop to generate a string 'results' made of each number formated as and html table row with even numbers
+                highlighted in bold font.
+                - The for loop will start at index = 0, increase index by 1 until it reahes the length of the 'numbers' array.
+                - An if else statement is used, with a modulo operation used to identify even numbers. Adding even numbers a class of
+                "evenNumber" to bold them.
+                - A modulo operation (%) returns the remainder or signed remainder of a division, after one number is divided by
+                another. In this if (number % 2) is equal to 0, it is an even number
+                - Will set the interHTML to 'results' a string witch has been formated to an HTML table with all the numbers inside the
+                given range, with even numbers highlighted in bold font.</p>
             </div>
         </div>
     </main>
