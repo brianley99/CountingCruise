@@ -17,7 +17,7 @@ function getValues() {
         Swal.fire({
             icon:'error',
             title: 'Ooops!',
-            text: 'Please enter valid Numbers for the start and and values',
+            text: 'Please enter valid Numbers for all Inputs',
             backdrop: 'false'
         });
     }
