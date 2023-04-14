@@ -21,9 +21,6 @@ function getValues() {
             backdrop: 'false'
         });
     }
-
-
-
 }
 
 //generate the range of numbers to display
@@ -37,7 +34,6 @@ function generateNumbers(start, end) {
     }
 
     return basketOfNumbers; // => [0, 1, 2, ..., 100]
-
 }
 
 //showing the generated numbers on the page and bolding even numbers
@@ -59,5 +55,4 @@ function displayNumbers(numbers) {
 
     let tableBody = document.getElementById('results');
     tableBody.innerHTML = results;
-
 }

@@ -72,13 +72,16 @@ footer {
 #mainNav {
     background-color: var(--bl-nav-bg-color) !important;
     font-family: var(--bl-subtitle-font);
-    text-transform: uppercase;
     font-size: 1rem;
 }
 
 #mainNav .active {
     border-bottom: 4px solid var(--bl-primary-color);
 
+}
+
+#mainNav .nav-link {
+    text-transform: uppercase;
 }
 
 .navbar-toggler-bl {
@@ -98,6 +101,30 @@ footer {
 /* --- END NAVBAR  ---- */
 
 /* ----- MAIN ----- */
+
+.appLogo {
+    max-width: 460px;
+}
+
+body {
+    font-size: 16px;
+    font-family: var(--bl-subtitle-font);
+}
+
+.hero h1 {
+    font-size: 36px;
+    font-family: var(--bl-title-font);
+}
+
+.hero h2 {
+    font-weight: 400 !important;
+    font-size: 20px;
+}
+
+section h3 {
+    font-weight: 300;
+}
+
 .checklist {
     list-style-type: none;
 }
@@ -112,9 +139,18 @@ footer {
     padding: .5rem;
 }
 
-.appLogo {
-    max-width: 400px;
+#appForm,
+#resultsTable {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+#resultsTable {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
 
 /* ----- END MAIN ----- */
 
@@ -181,3 +217,87 @@ footer {
 }
 
 /* ---- END BOOTSTRAP OVEREIDE ---- */
+
+
+/***** Media Quieries *****/
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    body {
+        font-size: 20px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+    }
+
+    section h3 {
+        font-size: 24px;
+    }
+
+    section h4 {
+        font-size: 30px;
+    }
+
+    section h5 {
+        font-size: 24px;
+    }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .hero h1 {
+        font-size: 60px;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    section h3 {
+        font-size: 30px;
+    }
+
+    section h4 {
+        font-size: 36px;
+    }
+
+    section h5 {
+        font-size: 30px;
+    }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+    }
+
+    section h3 {
+        font-size: 30px;
+    }
+
+    section h4 {
+        font-size: 36px;
+    }
+
+    section h5 {
+        font-size: 30px;
+    }
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {}
+
+/***** End Media Quieries *****/
