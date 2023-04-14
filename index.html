@@ -10,8 +10,9 @@
     <link rel="shortcut icon" href="/img/Favicon/favicon.ico" type="image/x-icon" />
 
     <!-- Bootstrap CSS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
@@ -78,8 +79,8 @@
         </nav>
     </header>
 
-    <main class="container my-3">
-        <section id="home" class="hero mb-5 mb-lg-0">
+    <main class="container p-3">
+        <section id="home" class="hero">
             <div class="row row-cols-1 row-cols-lg-2 g-3">
                 <div class="col d-flex justify-content-center mb-3">
                     <img src="/img/Counting Cruise.svg" class="appLogo mx-auto w-100" />
@@ -87,20 +88,21 @@
                 <div class="col d-flex justify-content-center align-items-center">
                     <div>
                         <h1>Coding Challange</h1>
-                        <h2 class="mb-3">
+                        <p class="lead mb-3">
                             Counting Cruise is a web page programmed with JavaScript to generate a table of numbers
                             within a
                             specified range, highlighting even numbers in <strong>bold</strong> font.
-                        </h2>
-                        <a href="#app" class="btn btn-primary btn-lg">Try it!</a>
-                        <a href="#code" class="btn btn-secondary btn-lg">Check out Code</a>
+                        </p>
+                        <a href="#app" class="btn btn-primary btn-lg">Try it out!</a>
+                        <a href="#code" class="btn btn-outline-dark btn-lg">View Code</a>
                     </div>
 
                 </div>
             </div>
         </section>
-        <section id="aboutBuild" class="mb-5 pb-lg-2">
-            <h3>Build Using</h3>
+        <hr>
+        <section id="aboutBuild" class="mt-5">
+            <h3 class="fw-light">Build Using</h3>
             <div class="techStack mb-2">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
@@ -130,8 +132,9 @@
                 </li>
             </ul>
         </section>
-        <section id="app" class="my-5 pb-lg-2">
-            <h3>Instructions</h3>
+        <hr>
+        <section id="app" class="mt-5">
+            <h3 class="fw-light">Instructions</h3>
             <ol>
                 <li>Enter a starting and an ending number within 0 to 100.</li>
                 <li>Click "Count" to generate the table.</li>
@@ -163,24 +166,29 @@
                 </table>
             </div>
         </section>
-        <section id="code" class="my-5 pb-lg-2">
-            <h3>The Code</h3>
+        <hr>
+        <section id="code" class="mt-5">
+            <h3 class="fw-light">The Code</h3>
             <!-- Overview -->
-            <div class="row g-4 code-section mt-3 mb-5 pb-lg-2">
-                <div class="col-12 col-xxl-5">
-                    <h4>Seperation of concerns</h4>
-                    <p>This coding challange is split into three sections, each of which will addreress a seperate
-                        concern.
-                    </p>
-                    <p>The Controller function getValues() will store the user's two inputs as numbers, call
+            <h4>Seperation of concerns</h4>
+            <p>This coding challange is split into three sections, each of which will addreress a seperate
+                concern.</p>
+            <dl class="row mb-0">
+                <dt class="col-md-3">Controller, Logic, View</dt>
+                <dd class="col-md-9">
+                    <p>Controller - Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, eligendi.</p>
+                    <p>Logic - Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam numquam iste est nam
+                        laboriosam!</p>
+                    <p>View - Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p class="d-none">Controller function getValues() will store the user's two inputs as numbers, call
                         generateNumbers()
                         to generate an array of numbers based on the user's input, and call displayNumbers() to display
                         the
                         results as table to the user.</p>
-                </div>
-                <div class="col-12 col-xxl-7 order-xxl-first">
-                    <pre class="line-numbers">
-                        <code class="language-js">
+                </dd>
+            </dl>
+            <pre class="line-numbers">
+                    <code class="language-js">
                     //Controller Function
                     function getValues()
                     
@@ -189,28 +197,27 @@
                     
                     //View Function
                     function displayNumbers()
-                        </code>
-                    </pre>
-                </div>
-            </div>
+                    </code>
+            </pre>
             <!-- Detail on functions -->
-            <div class="row g-4 code-section mb-5 pb-lg-2">
-                <div class="col-12 col-xxl-5">
-                    <h5>getValues()</h5>
-                    <ul>
-                        <li>Will retrive a 'startValue' and 'endValue' from the document, formating them as a number and
-                            assigning them to
-                            'startNumber' and 'endNumber'.</li>
-                        <li>Will call generateNumbers() with 'startNumber' and 'endNumbers' as its input to generate an
-                            array
-                            of numbers called
-                            'numberArray'.</li>
-                        <li>Will call displayNumbers() with 'numberArray' as its input.</li>
-                    </ul>
-                </div>
-                <div class="col-12 col-xxl-7">
-                    <pre class="line-numbers">
-                <code class="language-js">
+            <h4>Detail on functions</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque dolore maxime odio laborum!</p>
+            <div>
+                <dl class="row mb-0">
+                    <dt class="col-sm-3">getValues()</dt>
+                    <dd class="col-sm-9">
+                        <p>Will retrive a 'startValue' and 'endValue' from the document, formating them as a number and
+                        assigning them to
+                        'startNumber' and 'endNumber'.</p>
+                        <p>Will call generateNumbers() with 'startNumber' and 'endNumbers' as its input to generate an
+                        array
+                        of numbers called
+                        'numberArray'.</p>
+                        <p>Will call displayNumbers() with 'numberArray' as its input.</p>
+                    </dd>
+                </dl>
+                <pre class="line-numbers"><code class="language-js">
+                    
                     //get the start and end numbers from the inputs
 //enrty point AKA controller function
 function getValues() {
@@ -235,7 +242,32 @@ function getValues() {
         });
     }
 }
-                </code>
+                
+                </code></pre>
+            </div>
+            <div>
+                <dl class="row mb-0">
+                    <dt class="col-sm-3">Function()</dt>
+                    <dd class="col-sm-9">
+                        <p>Function1</p>
+                        <p>Function2</p>
+                        <p>Function3</p>
+                    </dd>
+                </dl>
+                <pre class="line-numbers"><code class="language-js"></code></pre>
+            </div>
+            <div class="row g-4 code-section mb-5 pb-lg-2">
+                <div class="col-12 col-xxl-5">
+                    <h5>()</h5>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-xxl-7">
+                    <pre class="line-numbers">
+                <code class="language-js"></code>
             </pre>
                 </div>
             </div>
@@ -360,9 +392,10 @@ function displayNumbers(numbers) {
     </footer>
 
     <!-- Bootstrap JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
+    <script src="/js/bootstrap.bundle.js"></script>
 
     <!-- Sweet Alert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
