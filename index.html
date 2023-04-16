@@ -10,9 +10,8 @@
     <link rel="shortcut icon" href="/img/Favicon/favicon.ico" type="image/x-icon" />
 
     <!-- Bootstrap CSS-->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
@@ -54,7 +53,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="#home">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#app">The App</a>
@@ -101,7 +100,7 @@
             </div>
         </section>
         <hr>
-        <section id="aboutBuild" class="mt-5">
+        <section id="about" class="mt-5">
             <h3 class="fw-light">Build Using</h3>
             <div class="techStack mb-2">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
@@ -134,21 +133,21 @@
         </section>
         <hr>
         <section id="app" class="mt-5">
-            <h3 class="fw-light">Instructions</h3>
+            <h3 class="fw-light">The App</h3>
             <ol>
-                <li>Enter a starting and an ending number within 0 to 100.</li>
+                <li>Enter a starting and an ending number.</li>
                 <li>Click "Count" to generate the table.</li>
             </ol>
-            <form id="appForm" action="#" class="bg-warning-subtle rounded p-3 mt-4 mb-2">
+            <form id="appForm" action="#" class="bg-primary-subtle rounded p-3 mt-4 mb-2">
                 <div class="row row-cols-2 g-3">
                     <div class="col">
-                        <label for="startValue" class="form-label">Starting Number</label>
-                        <input id="startValue" type="number" aria-label="Starting Number" value="0"
+                        <label for="startingValue" class="form-label">Starting Number</label>
+                        <input id="startingValue" type="number" aria-label="Starting Number" value="1"
                             class="form-control" />
                     </div>
                     <div class="col">
-                        <label for="endValue" class="form-label">Ending Number</label>
-                        <input id="endValue" type="number" aria-label="Ending Number" value="100"
+                        <label for="endingValue" class="form-label">Ending Number</label>
+                        <input id="endingValue" type="number" aria-label="Ending Number" value="100"
                             class="form-control" />
                     </div>
                     <div class="col text-start">
@@ -159,8 +158,8 @@
                 </div>
             </form>
             <div id="resultsTable" class="table-responsive">
-                <table class="table table-striped table-warning table-bordered text-end">
-                    <tbody id="results">
+                <table class="table table-striped table-primary table-bordered text-end">
+                    <tbody id="resultsTableBody">
                         <!-- JavaScript results go here-->
                     </tbody>
                 </table>
@@ -171,197 +170,145 @@
             <h3 class="fw-light">The Code</h3>
             <!-- Overview -->
             <h4>Seperation of concerns</h4>
-            <p>This coding challange is split into three sections, each of which will addreress a seperate
+            <p>The solution to this coding challange is split into three sections, each of which will addreress a seperate
                 concern.</p>
             <dl class="row mb-0">
                 <dt class="col-md-3">Controller, Logic, View</dt>
                 <dd class="col-md-9">
-                    <p>Controller - Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, eligendi.</p>
-                    <p>Logic - Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam numquam iste est nam
-                        laboriosam!</p>
-                    <p>View - Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <p class="d-none">Controller function getValues() will store the user's two inputs as numbers, call
-                        generateNumbers()
-                        to generate an array of numbers based on the user's input, and call displayNumbers() to display
-                        the
-                        results as table to the user.</p>
+                    <p>The <em>Controller</em> function is the entry point for the page, it's responsible for getting and validating the inputs as well as calling any other functions.</p>
+                    <p>The <em>Logic</em> function will return an array of numbers based on a given range.</p>
+                    <p>The <em>View</em> function will display the array of numbers to the page as an table with even numbers highlighted in bold font.</p>
                 </dd>
             </dl>
             <pre class="line-numbers">
                     <code class="language-js">
-                    //Controller Function
-                    function getValues()
-                    
-                    //Logic Function
-                    function generateNumbers()
-                    
-                    //View Function
-                    function displayNumbers()
+                        //Controller
+function getValues()
+
+//Business Logic
+function generateNumbers(startingValue, endingValue)
+
+//View
+function displayNumbers(numbers)
                     </code>
             </pre>
             <!-- Detail on functions -->
-            <h4>Detail on functions</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque dolore maxime odio laborum!</p>
-            <div>
+            <h4>Functions</h4>
+            <div id="getValues" class="mt-4">
                 <dl class="row mb-0">
                     <dt class="col-sm-3">getValues()</dt>
                     <dd class="col-sm-9">
-                        <p>Will retrive a 'startValue' and 'endValue' from the document, formating them as a number and
-                        assigning them to
-                        'startNumber' and 'endNumber'.</p>
-                        <p>Will call generateNumbers() with 'startNumber' and 'endNumbers' as its input to generate an
-                        array
-                        of numbers called
-                        'numberArray'.</p>
-                        <p>Will call displayNumbers() with 'numberArray' as its input.</p>
+                        <p>Store <span class="text-primary">startingValue</span> and <span class="text-primary">endingValue</span> using <em>getElementById</em> to retrive them from the document.</p>
+                        <p>Convert <span class="text-primary">startingValue</span> and <span class="text-primary">endingValue</span> into numbers using <em>parseInt</em>.</p>
+                        <p>Call <em>generateNumbers</em> to generate an array of <span class="text-primary">numbers</span> and call <em>displayNumbers</em> to display the table to the page. Only if both <span class="text-primary">startingValue</span> and <span class="text-primary">endingValue</span> are integers.</p>
                     </dd>
                 </dl>
-                <pre class="line-numbers"><code class="language-js">
-                    
-                    //get the start and end numbers from the inputs
-//enrty point AKA controller function
-function getValues() {
+                <pre class="line-numbers mt-0"><code class="language-js">
+                    //Controller
+function getValues(){
+    //Get Input values from page, validate inputs, generate numbers, display on page
 
-    let startValue = document.getElementById('startValue').value;
-    let endValue = document.getElementById('endValue').value;
+    //Get starting and ending values from the page
+    let startingValue = document.getElementById('startingValue').value;
+    let endingValue = document.getElementById('endingValue').value;
 
-    let startNumber = parseInt(startValue);
-    let endNumber = parseInt(endValue);
+    //Convert vaiables into numbers
+    startingValue = parseInt(startingValue);
+    endingValue = parseInt(endingValue);
 
-    if (Number.isInteger(startNumber) && Number.isInteger(endNumber)) {
-        // Valid numbers
-        let numberArray = generateNumbers(startNumber, endNumber);
-        displayNumbers(numberArray);
-    } else {
-        // Display an error
+    //Validate input, call logic & view functions
+    if (Number.isInteger(startingValue) == false) {
+        // Ending Value error display
         Swal.fire({
-            icon:'error',
+            icon: 'error',
             title: 'Ooops!',
-            text: 'Please enter valid Numbers for all Inputs',
+            text: 'Please enter valid Starting Number',
             backdrop: 'false'
         });
+    } else if (Number.isInteger(endingValue) == false) {
+        // Ending Value error display
+        Swal.fire({
+            icon: 'error',
+            title: 'Ooops!',
+            text: 'Please enter valid Ending Number',
+            backdrop: 'false'
+        });
+    } else {
+        //Call generateNumbers(), input starting and ending values & store in array
+        let numbers = generateNumbers(startingValue, endingValue);
+
+        //Call displayNumbers() & input array of numbers
+        displayNumbers(numbers);
     }
 }
-                
                 </code></pre>
             </div>
-            <div>
+            <div id="generateNumbers" class="mt-5">
                 <dl class="row mb-0">
-                    <dt class="col-sm-3">Function()</dt>
+                    <dt class="col-sm-3">generateNumbers()</dt>
                     <dd class="col-sm-9">
-                        <p>Function1</p>
-                        <p>Function2</p>
-                        <p>Function3</p>
+                        <p>Take a <span class="text-primary">startingValue</span> and <span class="text-primary">endingValue</span>.</p>
+                        <p>Create <span class="text-primary">numbers</span> as an empty array to store numbers.</p>
+                        <p>Generate an range of numbers from <span class="text-primary">startingValue</span> and <span class="text-primary">endingValue</span> using a for loop. Adding each <span class="text-primary">number</span> to <span class="text-primary">numbers</span>.</p>
+                        <p>Return <span class="text-primary">numbers</span>.</p>
                     </dd>
                 </dl>
-                <pre class="line-numbers"><code class="language-js"></code></pre>
-            </div>
-            <div class="row g-4 code-section mb-5 pb-lg-2">
-                <div class="col-12 col-xxl-5">
-                    <h5>()</h5>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-                <div class="col-12 col-xxl-7">
-                    <pre class="line-numbers">
-                <code class="language-js"></code>
-            </pre>
-                </div>
-            </div>
-            <div class="row g-4 code-section mb-5 pb-lg-2">
-                <div class="col-12 col-xxl-5">
-                    <h5>generateNumbers(<span class="text-muted">start, end</span>)</h5>
-                    <ul>
-                        <li>Will take two numbers ('start', 'end') to generate an array of numbers called
-                            'basketOfNUmbers'
-                            from specified range
-                            using a for loop.</li>
-                        <li>A for loop is made of four components an initialiser, condition, increaser/decreaser, and
-                            code
-                            to
-                            execute. <br>In this case the code will initialize at 'start', increase the 'start' value by
-                            1
-                            each
-                            loop
-                            until the starting value
-                            is greater than or equal to the ending value 'end'.</li>
-                        <li>Return 'basketOfNumbers'.</li>
-                    </ul>
-                </div>
-                <div class="col-12 col-xxl-7 order-xxl-first">
-                    <pre class="line-numbers">
-                <code class="language-js">
-                    //generate the range of numbers to display
-//business logic function
-function generateNumbers(start, end) {
+                <pre class="line-numbers mt-0"><code class="language-js">
+                    //Logic
+function generateNumbers(startingValue, endingValue){
+    //Return an array of numbers based on strating and ending values
 
-    let basketOfNumbers = [];
+    //Create empty array to store numbers
+    let numbers = [];
 
-    for (let number = start; number &lt;= end; number = number + 1) {
-        basketOfNumbers.push(number);
+    //Generate a range of numbers based on startingValue and endingValue, add to numbers array
+    for (let number = startingValue; number &lt;= endingValue; number++) {
+        //Start at 'startingValue' and increase 'number' by one until 'number' is equal to 'endingValue'
+        numbers.push(number);
     }
 
-    return basketOfNumbers; // => [0, 1, 2, ..., 100]
+    //Return array
+    return numbers;
 }
-                </code>
-            </pre>
-                </div>
+                </code></pre>
             </div>
-            <div class="row g-4 code-section mb-5 pb-lg-2">
-                <div class="col-12 col-xxl-5">
-                    <h5>displayNumbers(<span class="text-muted">numbers</span>)</h5>
-                    <ul>
-                        <li>Will take an array of numbers called 'numbers'.</li>
-                        <li>Use a for loop to generate a string 'results' made of each number formated as and html table
-                            row
-                            with even numbers
-                            highlighted in bold font.</li>
-                        <li>The for loop will start at index = 0, increase index by 1 until it reahes the length of the
-                            'numbers' array./li>
-                        <li>An if else statement is used, with a modulo operation used to identify even numbers. Adding
-                            even
-                            numbers a class of
-                            "evenNumber" to bold them.</li>
-                        <li>A modulo operation (%) returns the remainder or signed remainder of a division, after one
-                            number
-                            is divided by
-                            another.<br> In this if (number % 2) is equal to 0, it is an even number.</li>
-                        <li>Will set the interHTML to 'results' a string witch has been formated to an HTML table with
-                            all
-                            the
-                            numbers inside the
-                            given range, with even numbers highlighted in bold font.</li>
-                    </ul>
-                </div>
-                <div class="col-12 col-xxl-7">
-                    <pre class="line-numbers">
-                <code class="language-js">
-                    //showing the generated numbers on the page and bolding even numbers
-//view function
-function displayNumbers(numbers) {
+            <div id="displayNumbers" class="mt-5">
+                <dl class="row mb-0">
+                    <dt class="col-sm-3">displayNumbers()</dt>
+                    <dd class="col-sm-9">
+                        <p>Take <span class="text-primary">numbers</span>.</p>
+                        <p>Create <span class="text-primary">tableRows</span> as an empty string to store the formated <span class="text-primary">numbers</span> into.</p>
+                        <p>Format and add <span class="text-primary">numbers</span> as html table rows, with even numbers highlighted in bold to <span class="text-primary">tableRows</span> using a for loop.</p>
+                    </dd>
+                </dl>
+                <pre class="line-numbers mt-0"><code class="language-js">
+                    //View
+function displayNumbers(numbers){
+    //Display numbers as a table to html page with even numbers bolded
 
-    let results = '';
+    //Create an empty string to store numbers in html format
+    tableRows = '';
 
-    for (let index = 0; index &lt; numbers.length; index = index + 1) {
-        let currentNumber = numbers[index];
+    //Format to html code & add to string
+    for (let index = 0; index &lt; numbers.length; index++) {
+        //Go through all index values of numbers array
 
-        if (currentNumber % 2 == 0) {
-            results = results + '&lt;tr>&lt;td class="evenNumber">' + currentNumber + '&lt;/td>&lt;/tr>';
+        //Set number value
+        number = numbers[index];
+        
+        //Only format even numbers with bold font
+        if (number % 2 == 0) {
+            tableRows += `&lt;tr>&lt;td class="fw-bold">${number}&lt;/td>&lt;/tr>`;
         } else {
-            results = results + '&lt;tr>&lt;td>' + currentNumber + '&lt;/td>&lt;/tr>';
+            tableRows += `&lt;tr>&lt;td>${number}&lt;/td>&lt;/tr>`;
         }
-
     }
 
-    let tableBody = document.getElementById('results');
-    tableBody.innerHTML = results;
+    //Set element on page to formated numbers string
+    document.getElementById('resultsTableBody').innerHTML = tableRows; 
 }
-                </code>
-            </pre>
-                </div>
+
+                </code></pre>
             </div>
         </section>
     </main>
@@ -392,10 +339,9 @@ function displayNumbers(numbers) {
     </footer>
 
     <!-- Bootstrap JS-->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script> -->
-    <script src="/js/bootstrap.bundle.js"></script>
+        crossorigin="anonymous"></script>
 
     <!-- Sweet Alert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

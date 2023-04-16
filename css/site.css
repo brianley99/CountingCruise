@@ -67,6 +67,7 @@ footer {
     position: relative;
     top: 76px;
 }
+
 /***** End STICKY FOOTER *****/
 
 
@@ -99,6 +100,12 @@ footer {
 
 .navbar-brand {
     font-family: var(--bl-title-font);
+}
+
+#home,
+#app,
+#code {
+    scroll-margin-top: 86px;
 }
 
 /***** End NAVBAR *****/
@@ -139,7 +146,6 @@ main {
     max-height: 400px;
     overflow-y: auto;
 }
-
 /***** End MAIN *****/
 
 

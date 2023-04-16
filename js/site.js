@@ -1,58 +1,81 @@
-//get the start and end numbers from the inputs
-//enrty point AKA controller function
-function getValues() {
 
-    let startValue = document.getElementById('startValue').value;
-    let endValue = document.getElementById('endValue').value;
+//Controller
+function getValues(){
+    //Get Input values from page, validate inputs, generate numbers, display on page
 
-    let startNumber = parseInt(startValue);
-    let endNumber = parseInt(endValue);
+    //Get starting and ending values from the page
+    let startingValue = document.getElementById('startingValue').value;
+    let endingValue = document.getElementById('endingValue').value;
 
-    if (Number.isInteger(startNumber) && Number.isInteger(endNumber)) {
-        // Valid numbers
-        let numberArray = generateNumbers(startNumber, endNumber);
-        displayNumbers(numberArray);
-    } else {
-        // Display an error
+    //Convert vaiables into numbers
+    startingValue = parseInt(startingValue);
+    endingValue = parseInt(endingValue);
+
+    //Validate input, call logic & view functions
+    if (Number.isInteger(startingValue) == false) {
+        // Ending Value error display
         Swal.fire({
-            icon:'error',
+            icon: 'error',
             title: 'Ooops!',
-            text: 'Please enter valid Numbers for all Inputs',
+            text: 'Please enter valid Starting Number',
             backdrop: 'false'
         });
+    } else if (Number.isInteger(endingValue) == false) {
+        // Ending Value error display
+        Swal.fire({
+            icon: 'error',
+            title: 'Ooops!',
+            text: 'Please enter valid Ending Number',
+            backdrop: 'false'
+        });
+    } else {
+        //Call generateNumbers(), input starting and ending values & store in array
+        let numbers = generateNumbers(startingValue, endingValue);
+
+        //Call displayNumbers() & input array of numbers
+        displayNumbers(numbers);
     }
 }
 
-//generate the range of numbers to display
-//business logic function
-function generateNumbers(start, end) {
+//Logic
+function generateNumbers(startingValue, endingValue){
+    //Return an array of numbers based on strating and ending values
 
-    let basketOfNumbers = [];
+    //Create empty array to store numbers
+    let numbers = [];
 
-    for (let number = start; number <= end; number = number + 1) {
-        basketOfNumbers.push(number);
+    //Generate a range of numbers based on startingValue and endingValue, add to numbers array
+    for (let number = startingValue; number <= endingValue; number++) {
+        //Start at 'startingValue' and increase 'number' by one until 'number' is equal to 'endingValue'
+        numbers.push(number);
     }
 
-    return basketOfNumbers; // => [0, 1, 2, ..., 100]
+    //Return array
+    return numbers;
 }
 
-//showing the generated numbers on the page and bolding even numbers
-//view function
-function displayNumbers(numbers) {
+//View
+function displayNumbers(numbers){
+    //Display numbers as a table to html page with even numbers bolded
 
-    let results = '';
+    //Create an empty string to store numbers in html format
+    tableRows = '';
 
-    for (let index = 0; index < numbers.length; index = index + 1) {
-        let currentNumber = numbers[index];
+    //Format to html code & add to string
+    for (let index = 0; index < numbers.length; index++) {
+        //Go through all index values of numbers array
 
-        if (currentNumber % 2 == 0) {
-            results = results + '<tr><td class="evenNumber">' + currentNumber + '</td></tr>';
+        //Set number value
+        number = numbers[index];
+        
+        //Only format even numbers with bold font
+        if (number % 2 == 0) {
+            tableRows += `<tr><td class="fw-bold">${number}</td></tr>`;
         } else {
-            results = results + '<tr><td>' + currentNumber + '</td></tr>';
+            tableRows += `<tr><td>${number}</td></tr>`;
         }
-
     }
 
-    let tableBody = document.getElementById('results');
-    tableBody.innerHTML = results;
+    //Set element on page to formated numbers string
+    document.getElementById('resultsTableBody').innerHTML = tableRows; 
 }
