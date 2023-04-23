@@ -78,4 +78,7 @@ function displayNumbers(numbers){
 
     //Set element on page to formated numbers string
     document.getElementById('resultsTableBody').innerHTML = tableRows; 
+
+    //display results
+    document.getElementById('results').classList.remove('d-none');
 }
